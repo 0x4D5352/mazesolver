@@ -25,6 +25,9 @@ class Window:
         self.__is_running = False
         self.__root.protocol("WM_DELETE_WINDOW", self.close)
 
+    def __repr__(self) -> str:
+        return f'Window("{self.__width}x{self.__height}", "{self.__root.title}", "Is Running: {self.__is_running}")'
+
     def redraw(self) -> None:
         self.__root.update_idletasks()
         self.__root.update()
